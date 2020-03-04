@@ -1,0 +1,28 @@
+<!--
+ - Created by Kamil Golis
+ -->
+
+<!-- Field Based Related List With Search -->
+<template>
+    <c-ui-utils></c-ui-utils>
+    <lightning-card variant="Narrow" title={componentTitle} icon-name={icon}>
+        <lightning-layout vertical-align="end">
+            <lightning-layout-item padding="around-small" size="10" flexibility="auto">
+                <c-lookup selection={initialSelection} errors={errors} onsearch={handleSearch}
+                    onselectionchange={handleSelectionChange} label={searchLabel} placeholder={searchPlaceholder}
+                    is-multi-entry={isMultiEntry} disabled={disabled} required={required}>
+                </c-lookup>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="2" flexibility="auto">
+                <lightning-button variant="brand" label={label.addLabel} disabled={disableAdd}
+                    onclick={handleAddButton}></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+
+        <c-field-based-related-list object-api-name={objectApiName} related-object-api-name={relatedObjectApiName}
+            field-api-name={fieldApiName} displayed-columns={displayedColumns} override-title={overrideTitle}
+            override-columns-label={overrideColumnsLabel} separator={separator} maximum-items={maximumItems}
+            record-id={recordId} auto-save={autoSave} show-title={showTitle} icon={icon} onmaxitems={handleMaxItems}>
+        </c-field-based-related-list>
+    </lightning-card>
+</template>

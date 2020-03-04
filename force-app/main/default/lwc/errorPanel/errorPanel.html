@@ -1,0 +1,24 @@
+<!--
+ - Created by Kamil Golis
+ -->
+
+<!-- Error Panel -->
+<template>
+    <div class="slds-p-around_medium">
+        <lightning-icon icon-name="utility:error"></lightning-icon>
+        <div class="slds-p-around_small">
+            <p>{friendlyMessage}</p>
+            <template if:true={errors.length}>
+                <div class="slds-p-vertical_x-small">
+                    <lightning-input label={label.showDetailsLabel} type="checkbox" onchange={handleCheckboxChange}>
+                    </lightning-input>
+                </div>
+                <template if:true={viewDetails}>
+                    <template for:each={errors} for:item="error">
+                        <p key={error.message}>{error.message}</p>
+                    </template>
+                </template>
+            </template>
+        </div>
+    </div>
+</template>

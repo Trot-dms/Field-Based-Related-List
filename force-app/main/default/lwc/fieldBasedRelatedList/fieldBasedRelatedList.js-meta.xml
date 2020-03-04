@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>48.0</apiVersion>
+    <description>Field Based Related List</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Field Based Related List</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage, lightning__HomePage,lightning__RecordPage">
+            <property name="objectApiName" type="String" label="Object API name" description="API Name of main object that holds field with IDs for Related Object." />
+            <property name="relatedObjectApiName" type="String" label="Related object API Name" description="Related Object API Name." />
+            <property name="fieldApiName" type="String" label="Field API name with Ids" description="API Name of field on Main Object with IDs for Related Object, separated." />
+            <property name="displayedColumns" type="String" label="Columns to display" description="Separated list of columns to display." />
+            <property name="overrideTitle" type="String" label="Override title" description="Display text instead of related object label."/>
+            <property name="overrideColumnsLabel" type="String" label="Override column labels" description="Separated labels to be used instead of field plural label."/>
+            <property name="separator" type="String" label="Columns separator" description="Character that is considered as separator in Columns to display field." />
+            <property name="maximumItems" type="Integer" label="Maximum items on list" description="Number of maximum items on list, empty for no limit (except field length)." default="5"/>
+            <property name="icon" type="String" label="Icon name" description="Use LWC icons." default="standard:opportunity"/>
+            <property name="showTitle" type="Boolean" label="Show title?" description="This flag control title visibility" default="true"/>
+            <property name="autoSave" type="Boolean" label="Auto save on changes?" description="This flag control Save button visibility and auto saving on changes." default="false"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

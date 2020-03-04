@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Related_List_Remove_Item</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Related_List_Remove_Item</shortDescription>
+        <value>Remove from list</value>
+    </labels>
+    <labels>
+        <fullName>ap_Add</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ap_Add</shortDescription>
+        <value>Add</value>
+    </labels>
+    <labels>
+        <fullName>ap_Save</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ap_Save</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>ap_SaveChanges</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ap_SaveChanges</shortDescription>
+        <value>Save changes</value>
+    </labels>
+    <labels>
+        <fullName>ap_ShowDetails</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ap_ShowDetails</shortDescription>
+        <value>Show details</value>
+    </labels>
+</CustomLabels>

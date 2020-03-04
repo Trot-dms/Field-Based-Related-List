@@ -1,0 +1,44 @@
+<!--
+ - Created by Kamil Golis
+ -->
+
+<!-- Field Based Related List -->
+<template>
+    <template if:true={showCard}>
+        <lightning-card variant="narrow">
+            <template if:true={showTitle}>
+                <h3 slot="title">
+                    <lightning-icon icon-name={icon} size="small"></lightning-icon>&nbsp;&nbsp;
+                    {title}
+                </h3>
+                <div slot="actions">
+                    <template if:true={showTitle}>
+                        <lightning-button-menu alternative-text="Show menu" variant="border-filled"
+                            icon-name="utility:settings" menu-alignment="right">
+                            <lightning-menu-item if:false={autoSave} value="save" label={label.saveLabel}>
+                            </lightning-menu-item>
+                        </lightning-button-menu>
+                    </template>
+                </div>
+            </template>
+            <template id="datatable" if:true={rows}>
+                <lightning-datatable data={rows} columns={columns} key-field="id" onrowaction={handleRowAction}>
+                </lightning-datatable>
+            </template>
+            <template if:false={autoSave}>
+                <div slot="footer">
+                    <lightning-button variant="brand" label={label.saveLabel} title={label.saveChangesLabel}
+                        onclick={handleSaveButton} disabled={disableSaveButton} class="slds-m-left_x-small">
+                    </lightning-button>
+                </div>
+            </template>
+        </lightning-card>
+    </template>
+    <template if:true={error}>
+        <lightning-card variant="narrow">
+            <div class="slds-m-around_xx-large">
+                <c-error-panel errors={error}></c-error-panel>
+            </div>
+        </lightning-card>
+    </template>
+</template>
